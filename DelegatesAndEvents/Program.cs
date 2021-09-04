@@ -34,7 +34,6 @@ namespace DelegatesAndEvents
             return c;
         }
 
-
         static int Square(int x)
         {
             int c = x * x;
@@ -81,7 +80,7 @@ namespace DelegatesAndEvents
             Calculator calculator3 = new Calculator();
             calculator3.ExecuteFuncAction(Square, Console.WriteLine, 8);
 
-            //Lamba
+            //Lamda
             Calculator calculator4 = new Calculator();
             calculator4.ExecuteFunc((x) => x * x, Console.WriteLine, 9);
             calculator4.ExecuteFuncAction((x) => x * x, Console.WriteLine, 9);
