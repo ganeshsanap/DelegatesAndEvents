@@ -86,6 +86,21 @@ namespace DelegatesAndEvents
             calculator4.ExecuteFuncAction((x) => x * x, Console.WriteLine, 9);
 
             #endregion
+
+            #region Events
+            var video = new Video() { Title = "YouTube Playlist" };
+            var videoEncoder = new VideoEncoder(); // publisher
+
+            var mailService = new MailService(); // subscriber
+            videoEncoder.videoEncoded += mailService.OnVideoEncoded;
+
+            var messageService = new MessageService(); //subscriber
+            videoEncoder.videoEncoded += messageService.OnVideoEncoded;
+            
+            //execute event 
+            videoEncoder.Encode(video);
+
+            #endregion
         }
     }
 }
